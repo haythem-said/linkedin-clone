@@ -1,13 +1,40 @@
 import React from "react";
 import styled from "styled-components";
-
+import { AiFillHome, AiOutlineMenu ,AiOutlineSearch} from "react-icons/ai";
+import {BsPersonPlusFill} from 'react-icons/bs'
+import {IoIosSchool} from 'react-icons/io'
+import {RiMessage2Fill} from 'react-icons/ri'
+import {MdNotificationsActive} from 'react-icons/md'
+import {BsPersonCircle} from 'react-icons/bs'
 const Header = () => {
   return (
     <Conatiner>
-      <a>
+      <MenuLeft>
+        <a href="/home">
         <img className="logo" src="images/LinkedIn_logo.webp" />
-      </a>
-      <InputSearch type="text" placeholder="Recherche"></InputSearch>
+        </a>
+        <Search>
+        <AiOutlineSearch />
+        <InputSearch type="text" placeholder="Search"></InputSearch>
+        </Search>
+      </MenuLeft>
+      <Menu>
+        <AiFillHome className="iconHome"  />
+        
+        <BsPersonPlusFill className="iconHome" />
+
+        <IoIosSchool className="iconHome" />
+
+        <RiMessage2Fill className="iconHome" />
+
+        <MdNotificationsActive className="iconHome" />
+
+        <BsPersonCircle className="iconHome" />
+
+      </Menu>
+      <MenuRight>
+        <AiOutlineMenu className="iconHome" />
+      </MenuRight>
     </Conatiner>
   );
 };
@@ -18,6 +45,11 @@ const Conatiner = styled.div`
   width: 100%;
   height: 60px;
   position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+`;
+const MenuLeft = styled.div`
   display: flex;
   align-items: center;
 `;
@@ -31,3 +63,16 @@ const InputSearch = styled.input`
   height: 40px;
   box-sizing: border-box;
 `;
+const Menu = styled.div`
+  padding: 30px;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+const MenuRight = styled.div`
+  margin: 100px;
+`;
+const Search=styled.div`
+z-index:10`
