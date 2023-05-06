@@ -1,40 +1,63 @@
 import React from "react";
 import styled from "styled-components";
-import { AiFillHome, AiOutlineMenu ,AiOutlineSearch} from "react-icons/ai";
-import {BsPersonPlusFill} from 'react-icons/bs'
-import {IoIosSchool} from 'react-icons/io'
-import {RiMessage2Fill} from 'react-icons/ri'
-import {MdNotificationsActive} from 'react-icons/md'
-import {BsPersonCircle} from 'react-icons/bs'
+
 const Header = () => {
   return (
     <Conatiner>
-      <MenuLeft>
-        <a href="/home">
-        <img className="logo" src="images/LinkedIn_logo.webp" />
-        </a>
+      <Content>
+        <Logo>
+          <a href="/home">
+            <img src="images/home-logo.svg" alt="****" />
+          </a>
+        </Logo>
         <Search>
-        <AiOutlineSearch />
-        <InputSearch type="text" placeholder="Search"></InputSearch>
+          <div>
+            <input type="text" placeholder="Search" />
+          </div>
+          <SearchIcon>
+            <img src="images/search-icon.svg" />
+          </SearchIcon>
         </Search>
-      </MenuLeft>
-      <Menu>
-        <AiFillHome className="iconHome"  />
-        
-        <BsPersonPlusFill className="iconHome" />
+        <Nav>
+ 
+          <NavListWrap>
+          <NavList className="active">
+              <a>
+                <img src="/images/nav-home.svg" alt="" />
+                <span>Home</span>
+              </a>
+            </NavList>
 
-        <IoIosSchool className="iconHome" />
+            <NavList>
+              <a>
+                <img src="/images/nav-network.svg" alt="" />
+                <span>My Network</span>
+              </a>
+            </NavList>
 
-        <RiMessage2Fill className="iconHome" />
+            <NavList>
+              <a>
+                <img src="/images/nav-jobs.svg" alt="" />
+                <span>Jobs</span>
+              </a>
+            </NavList>
 
-        <MdNotificationsActive className="iconHome" />
+            <NavList>
+              <a>
+                <img src="/images/nav-messaging.svg" alt="" />
+                <span>Messaging</span>
+              </a>
+            </NavList>
 
-        <BsPersonCircle className="iconHome" />
-
-      </Menu>
-      <MenuRight>
-        <AiOutlineMenu className="iconHome" />
-      </MenuRight>
+            <NavList>
+              <a>
+                <img src="/images/nav-notifications.svg" alt="" />
+                <span>Notifications</span>
+              </a>
+            </NavList>
+          </NavListWrap>
+        </Nav>
+      </Content>
     </Conatiner>
   );
 };
@@ -42,37 +65,106 @@ const Header = () => {
 export default Header;
 const Conatiner = styled.div`
   background-color: #fff;
-  width: 100%;
-  height: 60px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 10px;
+  z-index: 100;
+  width: 100%;
+`;
+const Content = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-`;
-const MenuLeft = styled.div`
-  display: flex;
-  align-items: center;
-`;
-const InputSearch = styled.input`
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  width: 300px;
-  max-width: 500px;
-  height: 40px;
-  box-sizing: border-box;
-`;
-const Menu = styled.div`
-  padding: 30px;
   align-items: center;
   justify-content: center;
-  @media (max-width: 768px) {
-    display: none;
+  margin: 10px auto;
+  min-height: 100%;
+  max-width: 1228px;
+`;
+const Logo = styled.div`
+  margin-right: 10px;
+`;
+
+const Search = styled.div`
+  opacity: 1;
+  flex-grow: 1;
+  position: relative;
+  & > div {
+    max-width: 280px;
+    input {
+      border: none;
+      box-shadow: none;
+      background-color: #eef3f8;
+      border-radius: 2px;
+      color: rgba(0, 0, 0, 0.9);
+      width: 218px;
+      padding: 0 8px 0 40px;
+      line-height: 1.50;
+      font-weight: 400;
+      font-size: 14px;
+      height: 34px;
+      border-color: #dce6f1;
+      vertical-align: text-top;
+    }
   }
 `;
-const MenuRight = styled.div`
-  margin: 100px;
+const SearchIcon = styled.div`
+  width: 34px;
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  left: 8px;
+  pointer-events: none;
 `;
-const Search=styled.div`
-z-index:10`
+const Nav = styled.nav`
+  margin-left: auto;
+  display: block;
+  @media (max-width: 768px) {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background: white;
+    width: 100%;
+  }
+`;
+const NavListWrap =styled.ul`
+display: flex;
+flex-wrap: nowrap;
+list-style-type: none;
+`;
+const NavList =styled.li`
+display: flex;
+align-items: center;
+a {
+    align-items: center;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    font-weight: 400;
+    justify-content: center;
+    line-height: 1.5;
+    min-width: 80px;
+    position: relative;
+    text-decoration: none;
+   span{
+    color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;  
+    
+    }
+    @media (max-width: 768px) {
+      min-width: 70px;
+    }
+  }
+  &:hover,
+  &:active {
+    a {
+      span {
+        color: rgba(0, 0, 0, 0.9);
+      }
+    }
+  
+}
+
+`
