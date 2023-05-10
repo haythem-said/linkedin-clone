@@ -1,15 +1,15 @@
-.logo {
-  width: 35px;
-  height: 35px;
-  padding: 10px;
-  font-size: 24px;
-}
+  .logo {
+    width: 35px;
+    height: 35px;
+    padding: 10px;
+    font-size: 24px;
+  }
 
-body {
-  background-color: rgb(232, 236, 236);
-}
-.iconHome {
-  font-size: 24px;
-  padding: 10px;
-}
+  body {
+    background-color: #F3F2EF;
+  }
+  .iconHome {
+    font-size: 24px;
+    padding: 10px;
+  }
 

@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const Header = () => {
-  const [open,setOpen]=useState(false)
-  const handelClick =()=>{
-     setOpen(!open)
-  }
+  const [open, setOpen] = useState(false);
+  const handelClick = () => {
+    setOpen(!open);
+  };
   return (
     <Conatiner>
       <Content>
@@ -61,7 +61,7 @@ const Header = () => {
             <User onClick={handelClick}>
               <a>
                 <img src="/images/user.svg" alt="" />
-                <span >
+                <span>
                   Me
                   <img src="images/down-icon.svg " />
                 </span>
@@ -77,32 +77,33 @@ const Header = () => {
                 </span>
               </a>
             </Work>
-            {open ?
-            <SignOut>
-              <AboutMe>
-                <a>
-                  <img src="/images/user.svg" alt="" />
-                </a>
-                <div>
-                  <span>Haythem Said </span>
-                  <p>full stack Js developer</p>
-                </div>
-               
-              </AboutMe>
-              <a href="/home"> 
-              <Profil className="border">
-                  <span> Voir le Profile </span>
-                </Profil>
+            {open ? (
+              <SignOut>
+                <AboutMe>
+                  <a>
+                    <img src="/images/user.svg" alt="" />
+                  </a>
+                  <div>
+                    <span>Haythem Said </span>
+                    <p>full stack Js developer</p>
+                  </div>
+                </AboutMe>
+                <a href="/home">
+                  <Profil className="border">
+                    <span> Voir le Profile </span>
+                  </Profil>
                 </a>
                 <Setting>
-                 <p style={{fontSize:23  }}>Compte</p>
-                 <p>Essayer Premium gratuitement </p>
-                 <p>Préférence et confidentialité</p>
-                 <p>Aide</p>
-                 <p>Langue</p>
+                  <p style={{ fontSize: 23 }}>Compte</p>
+                  <p>Essayer Premium gratuitement </p>
+                  <p>Préférence et confidentialité</p>
+                  <p>Aide</p>
+                  <p>Langue</p>
                 </Setting>
-            </SignOut>
- : ('')}
+              </SignOut>
+            ) : (
+              ""
+            )}
           </NavListWrap>
         </Nav>
       </Content>
@@ -270,29 +271,28 @@ const AboutMe = styled.li`
   }
 `;
 
-const Profil =styled.li`
+const Profil = styled.li`
   list-style-type: none;
   border: solid;
   border-color: blue;
   border-radius: 30px;
   text-align: center;
   margin-right: 35px;
-  text-decoration-line: none;  
+  text-decoration-line: none;
   padding: 3px;
   .border {
-  span:after {
-    content: "";
-    transform: scaleX(1);
-    border-bottom: 2px solid var(--white, #fff);
-    bottom: 0;
-    left: 0;
-    margin: -1px;
-    position: absolute;
-    width: 100%;
-    border-color: rgba(0, 0, 0, 0.9);
+    span:after {
+      content: "";
+      transform: scaleX(1);
+      border-bottom: 2px solid var(--white, #fff);
+      bottom: 0;
+      left: 0;
+      margin: -1px;
+      position: absolute;
+      width: 100%;
+      border-color: rgba(0, 0, 0, 0.9);
+    }
   }
-}
 `;
 
-const Setting=styled.div``
-
+const Setting = styled.div``;
