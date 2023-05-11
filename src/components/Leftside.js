@@ -54,6 +54,7 @@ const Leftside = (props) => {
 
 const Container = styled.div`
   grid-area: leftside;
+  margin-left: 10px;
 `;
 
 const ArtCard = styled.div`

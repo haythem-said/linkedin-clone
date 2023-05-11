@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import App from "../App";
 import Leftside from "./Leftside";
+import Rightside from "./RightSide";
 const Home = (props) => {
   return (
     <Container>
@@ -9,9 +10,9 @@ const Home = (props) => {
         <p>Welcome haythem Said </p>
       </Section>
       <Layout>
-        <Leftside /> 
+        <Leftside />
         <div>mainSide</div>
-        <div>rightSide</div>
+        <Rightside />
       </Layout>
     </Container>
   );
@@ -29,7 +30,7 @@ const Section = styled.div`
 
 const Layout = styled.div`
   display: grid;
-  grid-template-areas: "leftSide mainSide rightSide";
+  grid-template-areas: "leftside mainSide rightside";
   grid-template-columns: minmax(0, 5fr) minmax(0, 12fr) minmax(300px, 7fr);
   column-gap: 25px;
   row-gap: 25px;
